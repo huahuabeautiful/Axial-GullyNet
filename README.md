@@ -1,4 +1,5 @@
 # Axial-GullyNet: Automatic Extraction of Erosion Gullies from Remote Sensing Images Using Axial Attention
+⚠️ Research Code - Paper Under Review
 <img width="2024" height="1206" alt="图3" src="https://github.com/user-attachments/assets/32408cb0-7f62-4632-9eac-c8f28723e240" />
 
 作者时使用GF6卫星影像以侵蚀沟为目标制作了14106对数据集，8：1：1划分训练、验证和测试集的进行训练，结果如下：
