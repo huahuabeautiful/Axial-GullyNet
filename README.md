@@ -44,8 +44,7 @@ The main features of this repository include:
 - ✅ Improved recognition capability for narrow and fragmented gullies
 - ✅ Complete training, prediction, and evaluation pipeline
 - ✅ Support for large-scale remote sensing image inference
-- ✅ Applicable to high-resolution satellite imagery such as GF-1 images
-
+- ✅ Applicable to high-resolution satellite imagery such as GF-6 images
 
 ---
 
@@ -92,22 +91,17 @@ Input Remote Sensing Image
 
 ```
 
-
 The Axial Attention module decomposes traditional 2D attention into two independent directional attentions:
-
 
 - Horizontal attention
 - Vertical attention
 
-
 Compared with standard convolution operations, Axial Attention can:
-
 
 - Capture global spatial dependencies
 - Enhance feature representation of elongated gullies
 - Improve continuity of extracted gully structures
 - Preserve fine boundary details
-
 
 ---
 
@@ -166,7 +160,6 @@ Axial-GullyNet
 │   └── resnet.py
 │       └── ResNet backbone
 
-
 │
 
 ├── utils
@@ -176,25 +169,20 @@ Axial-GullyNet
 │   ├── utils_metrics.py
 │   └── callbacks.py
 
-
 │
 
 ├── voc_annotation.py
 │   └── Dataset preparation
 
-
 └── requirements.txt
 
 ```
-
 
 ---
 
 # 🛠 Installation
 
-
 ## 1. Clone repository
-
 
 ```bash
 
@@ -203,15 +191,12 @@ git clone https://github.com/yourname/Axial-GullyNet.git
 cd Axial-GullyNet
 
 ```
-
-
 ---
 
 ## 2. Create environment
 
 
 Recommended environment:
-
 
 ```
 Python >= 3.8
@@ -222,27 +207,20 @@ CUDA >= 11.8
 
 ```
 
-
 Install dependencies:
-
 
 ```bash
 
 pip install -r requirements.txt
 
 ```
-
-
 Example:
-
 
 ```bash
 
 pip install torch torchvision numpy opencv-python pillow matplotlib tqdm scipy
 
 ```
-
-
 ---
 
 # 📊 Dataset Preparation
@@ -279,15 +257,12 @@ VOCdevkit
 
 ```
 
-
 The label mask contains two categories:
-
 
 | Pixel Value | Category |
 |---|---|
 |0|Background|
 |1|Erosion gully|
-
 
 ---
 
@@ -296,15 +271,12 @@ The label mask contains two categories:
 
 Modify the configuration parameters in:
 
-
 ```
 train.py
 
 ```
 
-
 Example:
-
 
 ```python
 
@@ -318,9 +290,7 @@ model_path = ""
 
 ```
 
-
 Start training:
-
 
 ```bash
 
@@ -328,16 +298,12 @@ python train.py
 
 ```
 
-
 The best model weights will be saved automatically:
-
 
 ```
 logs/
 
 ```
-
-
 ---
 
 # 🔍 Prediction
@@ -355,9 +321,7 @@ python predict.py
 
 ```
 
-
 Output:
-
 
 ```
 results/
@@ -367,8 +331,6 @@ results/
 └── mask.png
 
 ```
-
-
 ---
 
 # 🌍 Large-scale Remote Sensing Image Prediction
@@ -376,25 +338,18 @@ results/
 
 For full satellite images, the framework provides sliding-window inference:
 
-
 ```bash
 
 python predict_full_image.py
 
 ```
 
-
 The prediction module supports:
-
-
 - Large-size satellite images
 - Sliding window cropping
 - Overlapping prediction
 - Automatic mask generation
-
-
 This function is suitable for GF-1 and other high-resolution remote sensing images.
-
 
 ---
 
@@ -444,61 +399,15 @@ Typical input data:
 
 ---
 
-# 📝 Citation
-
-
-If you use this repository in your research, please cite:
-
-
-```bibtex
-
-@article{
-
-author={Your Name},
-
-title={Axial-GullyNet: Automatic Extraction of Erosion Gullies from Remote Sensing Images Using Axial Attention},
-
-journal={Remote Sensing},
-
-year={2026}
-
-}
-
-```
-
-
----
-
-# 📜 License
-
-
-This project is released under the MIT License.
-
-
----
-
 # 📧 Contact
-
-
 For questions, suggestions, or collaboration:
-
-
-Email:
-
-804638568@qq.com
-
-
+Email:804638568@qq.com
 ---
 
-# 🙏 Acknowledgements
+## 🙏 致谢 (Acknowledgements)
 
-
-This work is inspired by:
-
-
-- DeepLabV3+
-- Axial Attention
-- PyTorch Semantic Segmentation Framework
+*   本项目在早期开发与学习阶段，受益于 B 站 UP 主 **“东北Abner说AI”** 提供的 U-Net 模型课程，在此表示诚挚的感谢。
+*   部分基础架构代码借鉴并改进自开源项目：[milesial/Pytorch-UNet](https://github.com/milesial/Pytorch-UNet)。
 
 
 We thank the open-source community for providing excellent deep learning resources.
@@ -540,3 +449,4 @@ We thank the open-source community for providing excellent deep learning resourc
 
 
 **Copyright © 2026 Axial-GullyNet Authors. All Rights Reserved.**
+
